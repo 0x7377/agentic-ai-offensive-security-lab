@@ -102,11 +102,11 @@ OpenCode 실습 폴더에서 등록합니다.
 
 ```bash
 cd labs/3100
-opencode mcp add cve --url http://127.0.0.1:8800/mcp
+opencode mcp add cve-intel --url http://127.0.0.1:8800/mcp
 opencode mcp list
 ```
 
-성공 기준은 `cve` 서버가 `connected`로 표시되는 것입니다. 일부 OpenCode 버전에서 목록 표시와 실제 연결 상태가 다를 수 있으므로 다음 설정 확인도 함께 사용합니다.
+성공 기준은 `cve-intel` 서버가 `connected`로 표시되는 것입니다. 일부 OpenCode 버전에서 목록 표시와 실제 연결 상태가 다를 수 있으므로 다음 설정 확인도 함께 사용합니다.
 
 ```bash
 opencode debug config --standalone
