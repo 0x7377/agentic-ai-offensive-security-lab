@@ -1,0 +1,13 @@
+Agentic AI for Offensive Security Lab Kit
+Copyright 2026 Seonwoo Kim
+
+Original course materials in this repository are licensed under the
+Apache License, Version 2.0, except for the third-party components and
+adapted content identified in THIRD_PARTY_NOTICES.md and LICENSES/README.md.
+
+This product includes ARTEX, licensed under the GNU Affero General Public
+License, Version 3.0. Its source and license are preserved under artex/source/.
+
+Portions of the security skill methodology are adapted from Claude-BugHunter
+by Sachin Sharma and are licensed under Creative Commons Attribution 4.0
+International. See THIRD_PARTY_NOTICES.md for the exact paths and attribution.

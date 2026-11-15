@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="한국철도공사 스타일 보안교육용 승무일정 조회 실습">
+  <title>한국철도공사 교육용 승무일정 조회</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/wide.css">
+</head>
+<body>
+  <div class="training"><b>보안교육용 로컬 복제본</b><span>공식 서비스가 아니며 화면의 기관·인물·업무 데이터는 모두 합성 정보입니다.</span></div>
+  <header>
+    <a class="korail-logo" href="#"><img src="https://info.korail.com/common/images/layout/logo-info-short--color.svg" alt="KORAIL 한국철도공사"></a>
+    <nav><a href="#">CEO</a><a href="#">일반현황</a><a href="#">조직현황</a><a href="#">채용정보</a></nav>
+    <div class="header-tools"><button type="button" aria-label="통합검색">⌕</button><button type="button" aria-label="주메뉴">☰</button></div>
+  </header>
+
+  <section class="hero">
+    <div class="slogan"><img src="https://info.korail.com/site/info/images/main/slogan_main.png" alt="코레일 잇다. 당신이 원하는 모든 길"></div>
+    <div class="hero-card"><small>CREW OPERATION · TRAINING</small><h2>승무운영 통합지원</h2><p>안전한 철도 운행을 위한 승무일정을 확인하세요.</p><a href="#schedule">일정 조회하기 ↓</a></div>
+    <div class="hero-controls"><button type="button">‹</button><button type="button">Ⅱ</button><button type="button">›</button><span>1 / 4</span></div>
+    <div class="hero-caption"><b>사람·세상·미래를 잇는 대한민국 철도</b><span>내려서 더보기⌄</span><em>○　●　○　○</em></div>
+  </section>
+
+  <main>
+    <section class="quick-menu"><h2>승무운영 <b>주요 메뉴</b></h2><a class="active" href="#schedule"><i>01</i><strong>승무일정 조회</strong><span>일자·승무원별 배치</span></a><a href="#"><i>02</i><strong>운행현황</strong><span>열차별 운행상태</span></a><a href="#"><i>03</i><strong>안전공지</strong><span>필수 안전 확인</span></a><a href="#"><i>04</i><strong>업무지원</strong><span>승무사업소 안내</span></a></section>
+
+    <section class="page-head"><div><small>CREW OPERATION</small><h1>승무일정 조회</h1><p>조회일 기준으로 배치된 승무원과 열차 정보를 확인합니다.</p></div><div class="user"><span>교육망 접속 사용자</span><b>교육 운영자 · 서울승무사업소</b><small>승무일정 조회 / 읽기 전용</small></div></section>
+
+    <section class="summary"><article><span>전체 승무</span><b>06</b><small>건</small></article><article><span>운행 확정</span><b>04</b><small>건</small></article><article><span>대기</span><b>01</b><small>건</small></article><article><span>변경 검토</span><b>01</b><small>건</small></article><div><span>기준일</span><b>2026. 11. 05.</b><small>최종 동기화 08:45</small></div></section>
+
+    <div class="content-grid">
+      <article class="schedule-card" id="schedule">
+        <div class="card-head"><div><span>01</span><h2>승무원 배치일정</h2></div><em>조회 전용</em></div>
+        <form id="search-form"><label>조회일<input id="schedule-date" name="date" type="date" value="2026-11-05"></label><label class="query">승무원명<input id="schedule-query" name="query" type="search" placeholder="성명을 입력하세요" autocomplete="off"></label><button type="submit">조회</button><button id="reset-button" class="secondary" type="button">초기화</button></form>
+        <div id="result-message" class="result-message" role="status"></div>
+        <div class="table-wrap"><table><thead><tr><th>보고</th><th>승무원</th><th>직무</th><th>열차</th><th>운행구간</th><th>해방</th><th>타는 곳</th><th>상태</th></tr></thead><tbody id="schedule-body"><tr><td colspan="8" class="loading">일정을 불러오는 중입니다.</td></tr></tbody></table></div>
+      </article>
+      <aside>
+        <section class="notice"><div><h2>KORAIL 업무공지</h2><button type="button">＋</button></div><ul><li><span>운행</span><b>동절기 운전취급 및 승무보고 기준 안내</b><time>2026.11.05</time></li><li><span>안전</span><b>승강장 안전확인 체크리스트 개정</b><time>2026.11.04</time></li><li><span>일반</span><b>11월 승무원 교육 일정 및 참석 확인</b><time>2026.11.03</time></li></ul></section>
+        <section class="route"><h3>주요 노선 운행상태</h3><p><span>경부고속선</span><b>정상</b></p><p><span>호남고속선</span><b>정상</b></p><p><span>강릉선</span><b class="caution">기상 주의</b></p></section>
+      </aside>
+    </div>
+  </main>
+  <footer><img src="https://info.korail.com/common/images/layout/logo-info-short--color.svg" alt="KORAIL 한국철도공사"><div><b>보안교육용 로컬 복제본 · 공식 서비스 아님</b><span>대전광역시 동구 중앙로 240 · 고객센터 1588-7788</span></div><span>v1.4.2-training</span></footer>
+  <script src="/app.js" defer></script>
+</body>
+</html>

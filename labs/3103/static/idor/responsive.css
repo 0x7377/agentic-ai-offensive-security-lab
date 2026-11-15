@@ -1,0 +1,8 @@
+@media (max-width: 1000px) and (min-width: 701px) {
+  header { padding-left: 18px; padding-right: 18px; }
+  .gas-logo img { width: 135px; }
+  header nav { display: flex; gap: 16px; }
+  header nav a { font-size: 10px; }
+  .visual-links { display: grid; right: 2%; }
+  .visual-links a { width: 125px; height: 125px; }
+}

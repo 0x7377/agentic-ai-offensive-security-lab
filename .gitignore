@@ -1,0 +1,37 @@
+# Secrets and local configuration
+.env
+config/opencode.jsonc
+**/opencode.jsonc
+**/.env
+!**/.env.example
+
+# Runtime data must never be committed
+runtime/artex-data/*
+!runtime/artex-data/.gitkeep
+runtime/artex-skills/*
+!runtime/artex-skills/.gitkeep
+labs/3100/.opencode/skills/*
+!labs/3100/.opencode/skills/.gitkeep
+**/transcripts/
+**/traffic/
+**/tasks/runtime/
+**/*.sqlite
+**/*.db
+**/mitmproxy-ca.pem
+
+# Build and tool output
+**/__pycache__/
+**/*.pyc
+**/node_modules/
+**/.next/
+**/dist/
+**/out/
+tmp/
+output/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
