@@ -89,13 +89,20 @@ PowerShell에 설치된 별도 `opencode.exe`와 Ubuntu의 `opencode`를 섞지 
 cp config/opencode.deepseek.jsonc.example labs/3100/opencode.jsonc
 ```
 
+### Experiential Labs 회차
+
+```bash
+cp config/opencode.experiential.jsonc.example labs/3100/opencode.jsonc
+```
+
 ### vLLM 회차
 
 ```bash
 cp config/opencode.vllm.jsonc.example labs/3100/opencode.jsonc
 ```
 
-`labs/3100/opencode.jsonc`는 개인 실행 설정이므로 Git에 포함되지 않습니다. 두 파일을 합치거나 동시에 복사하지 않습니다.
+`labs/3100/opencode.jsonc`는 개인 실행 설정이므로 Git에 포함되지 않습니다. 예제 파일은
+하나만 선택하며 서로 합치지 않습니다.
 
 vLLM의 Base URL과 모델명은 강의 환경에 따라 달라질 수 있습니다. 다음 두 값을 강사가 안내한 정보와 대조합니다.
 
@@ -106,7 +113,7 @@ vLLM의 Base URL과 모델명은 강의 환경에 따라 달라질 수 있습니
 
 직접 수정했다면 JSON의 따옴표와 쉼표를 지웁니다. API Key를 설정 파일에 직접 작성하지 않습니다.
 
-## 5. DeepSeek 키 입력
+## 5. API Key 입력
 
 DeepSeek 회차에서만 OpenCode를 실행할 동일한 터미널에 환경 변수를 설정합니다.
 
@@ -132,6 +139,32 @@ test -n "$DEEPSEEK_API_KEY" && echo 'DeepSeek key is set'
 
 새 터미널을 열면 환경 변수는 사라집니다. `.zshrc`, `.bashrc`, 명령 기록, Git 파일에 API Key를 저장하지 않습니다.
 
+### Experiential Labs
+
+Experiential Labs 회차에서는 `xpl_`로 시작하는 Gateway Key를 사용합니다.
+
+macOS zsh:
+
+```bash
+read -s "EXPLABS_API_KEY?Experiential Labs API Key: "
+export EXPLABS_API_KEY
+echo
+```
+
+Windows WSL2 Ubuntu Bash:
+
+```bash
+read -s -p 'Experiential Labs API Key: ' EXPLABS_API_KEY
+export EXPLABS_API_KEY
+echo
+```
+
+설정 여부만 확인합니다.
+
+```bash
+test -n "$EXPLABS_API_KEY" && echo 'Experiential Labs key is set'
+```
+
 ## 6. 모델 목록 확인
 
 실습 폴더로 이동합니다.
@@ -145,6 +178,7 @@ opencode models --standalone
 성공 기준:
 
 - DeepSeek 회차: `class-deepseek/deepseek-flash` 표시
+- Experiential Labs 회차: `experiential/deepseek-v4.1-flash` 표시
 - vLLM 회차: `class-vllm/qwen3.8-flash-next` 또는 강사가 지정한 모델 표시
 
 모델이 없다면 다음을 확인합니다.
@@ -161,7 +195,17 @@ opencode debug config --standalone
 현재 경로가 `labs/3100`인지 확인한 다음 실행합니다.
 
 ```bash
-opencode
+opencode --standalone
+```
+
+이 수업에서는 모든 회차를 `--standalone`으로 실행합니다. 현재 터미널의 Provider 설정과
+API Key를 새 OpenCode 프로세스에 직접 전달하며, 이전 실습에서 남은 백그라운드 서비스의
+설정과 섞이는 문제를 막습니다. 이미 서비스가 실행 중이라면 다음처럼 중지한 뒤 같은
+터미널에서 실행합니다.
+
+```bash
+opencode service stop
+opencode --standalone
 ```
 
 첫 화면에서 모델명을 확인하고 다음처럼 짧게 요청합니다.

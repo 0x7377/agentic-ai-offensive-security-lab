@@ -117,7 +117,7 @@ DB 볼륨까지 초기화하려면 `docker compose --profile "*" down -v`를 사
 ```text
 .
 ├── artex/              # 고정 버전 ARTEX 소스와 수업용 초기화 SQL
-├── config/             # OpenCode의 vLLM / DeepSeek 설정 예시
+├── config/             # OpenCode의 vLLM / DeepSeek / Experiential 설정 예시
 ├── docs/               # OS별 준비, 문제 해결, 정리 안내
 ├── labs/3100~3105/     # Docker Compose로 실행하는 실습 표적
 ├── mcp/                # CVE MCP 서버

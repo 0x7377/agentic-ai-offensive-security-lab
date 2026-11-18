@@ -27,6 +27,8 @@ OpenCode에서 보이는 과정은 다음과 같다.
 ```bash
 cp config/opencode.deepseek.jsonc.example labs/3100/opencode.jsonc
 # 또는
+cp config/opencode.experiential.jsonc.example labs/3100/opencode.jsonc
+# 또는
 cp config/opencode.vllm.jsonc.example labs/3100/opencode.jsonc
 ```
 
@@ -35,10 +37,14 @@ cp config/opencode.vllm.jsonc.example labs/3100/opencode.jsonc
 ```powershell
 Copy-Item config\opencode.deepseek.jsonc.example labs\3100\opencode.jsonc
 # 또는
+Copy-Item config\opencode.experiential.jsonc.example labs\3100\opencode.jsonc
+# 또는
 Copy-Item config\opencode.vllm.jsonc.example labs\3100\opencode.jsonc
 ```
 
-DeepSeek 사용자는 OpenCode를 실행한 PowerShell 또는 터미널에 `DEEPSEEK_API_KEY` 환경 변수를 설정한다. vLLM의 Base URL과 모델명은 강사가 안내한 값을 입력한다.
+DeepSeek 사용자는 `DEEPSEEK_API_KEY`, Experiential Labs 사용자는 `EXPLABS_API_KEY`를
+OpenCode를 실행할 동일한 터미널에 설정한다. vLLM의 Base URL과 모델명은 강사가 안내한
+값을 입력한다.
 
 설정을 마친 뒤 작업 경로로 이동한다.
 
@@ -46,7 +52,8 @@ DeepSeek 사용자는 OpenCode를 실행한 PowerShell 또는 터미널에 `DEEP
 cd labs/3100
 ```
 
-모델 목록은 인자를 붙이지 않고 `opencode models --standalone`로 확인한다.
+모델 목록은 `opencode models --standalone`로 확인한다. 이 수업의 모든 회차는 기존
+백그라운드 서비스를 사용하지 않고 `opencode --standalone`으로 실행한다.
 
 ## 권한 주의
 

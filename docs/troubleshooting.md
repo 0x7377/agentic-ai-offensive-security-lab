@@ -166,7 +166,7 @@ docker compose logs --tail=80 cve-mcp
 OpenCode에서는 다음을 함께 확인합니다.
 
 ```bash
-opencode mcp list
+opencode mcp list --standalone
 opencode debug config --standalone
 ```
 
