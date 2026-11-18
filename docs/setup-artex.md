@@ -103,14 +103,19 @@ OpenCode 실습 폴더에서 등록합니다.
 ```bash
 cd labs/3100
 opencode mcp add cve-intel --url http://127.0.0.1:8800/mcp
-opencode mcp list --standalone
-```
-
-성공 기준은 `cve-intel` 서버가 `connected`로 표시되는 것입니다. 일부 OpenCode 버전에서 목록 표시와 실제 연결 상태가 다를 수 있으므로 다음 설정 확인도 함께 사용합니다.
-
-```bash
 opencode debug config --standalone
 ```
+
+`debug config` 출력의 프로젝트 설정 아래에 `mcp.servers.cve-intel`이 있으면 현재
+`labs/3100/opencode.jsonc`에 등록된 것입니다. 이어서 같은 폴더와 터미널에서 실행합니다.
+
+```bash
+opencode --standalone
+```
+
+OpenCode 안에서 `/mcps`를 열어 `cve-intel` 연결 상태를 확인합니다. OpenCode 2.2.5에서는
+`opencode mcp list --standalone`이 프로젝트 설정을 읽고도 빈 목록을 표시할 수 있으므로 수업
+완료 기준으로 사용하지 않습니다.
 
 최종 판정은 실제 MCP Tool이 호출되어 구조화된 CVE 결과를 반환하는지로 합니다. 모델이 기억으로 CVE를 답한 것은 MCP 연결 증거가 아닙니다.
 

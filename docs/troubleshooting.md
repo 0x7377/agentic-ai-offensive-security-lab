@@ -166,11 +166,12 @@ docker compose logs --tail=80 cve-mcp
 OpenCode에서는 다음을 함께 확인합니다.
 
 ```bash
-opencode mcp list --standalone
 opencode debug config --standalone
+opencode --standalone
 ```
 
-목록 표시만으로 판단하지 말고 실제 CVE Tool Call 결과를 확인합니다.
+`debug config`에서 `mcp.servers.cve-intel`을 확인하고, 실행 화면의 `/mcps`에서 연결 상태를
+확인합니다. 목록 표시만으로 판단하지 말고 실제 CVE Tool Call 결과를 확인합니다.
 
 ## 중단 후 재개
 
