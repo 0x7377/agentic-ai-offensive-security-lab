@@ -233,7 +233,7 @@ OpenCode가 명령 실행을 요청하면 다음을 확인합니다.
 
 `sudo`, `docker system prune`, `docker compose down -v`, 홈 디렉토리 전체 수정은 수업 중 강사의 명시적 안내 없이 승인하지 않습니다.
 
-## 9. Skill 실습 전 상태
+## 9. 준비된 Skill 적용
 
 첫 번째 Naive 실습 전에는 프로젝트 Skill 폴더가 비어 있어야 합니다.
 
@@ -241,4 +241,56 @@ OpenCode가 명령 실행을 요청하면 다음을 확인합니다.
 find .opencode/skills -mindepth 1 -maxdepth 1 -print
 ```
 
-출력이 없어야 합니다. Skill은 강의 단계에서 `skills/source`의 지정 항목만 복사합니다. 자세한 절차는 [ARTEX·MCP·Skill 준비](setup-artex.md)를 참고합니다.
+출력이 없어야 합니다. Skill은 강의 단계에서 `skills/source`의 지정 항목만 복사합니다.
+
+기본 실행을 마친 뒤 OpenCode를 종료하고 저장소 루트에서 3100 전용 Skill을 설치합니다.
+
+macOS Terminal과 Windows WSL2의 Ubuntu에서 같은 Bash 명령을 사용합니다. Windows에서는
+PowerShell의 `Copy-Item`이나 별도로 설치한 `opencode.exe`와 혼용하지 않습니다.
+
+```bash
+mkdir -p labs/3100/.opencode/skills
+cp -R skills/source/public-web-inventory labs/3100/.opencode/skills/
+cp -R skills/source/known-vulnerability-triage labs/3100/.opencode/skills/
+```
+
+다음 파일이 보이면 설치가 끝난 것입니다.
+
+```text
+labs/3100/.opencode/skills/public-web-inventory/SKILL.md
+labs/3100/.opencode/skills/public-web-inventory/references/report-schema.md
+labs/3100/.opencode/skills/known-vulnerability-triage/SKILL.md
+```
+
+저장소 루트에서 CVE MCP를 기동합니다.
+
+```bash
+docker compose up -d --build cve-mcp
+docker compose ps cve-mcp
+```
+
+프로젝트 폴더로 이동해 MCP를 등록하고 저장된 설정을 확인합니다.
+
+```bash
+cd labs/3100
+opencode mcp add cve-intel --url http://127.0.0.1:8800/mcp
+opencode debug config --standalone
+opencode --standalone
+```
+
+새 세션의 OpenCode 입력창에서 다음 Slash Command를 차례로 실행합니다.
+
+```text
+/skills
+/mcps
+```
+
+`/skills`에서 `public-web-inventory`와 `known-vulnerability-triage`, `/mcps`에서
+`cve-intel connected`를 확인합니다. 각 목록은 `Esc`로 닫습니다. 두 명령은 상태 확인용이며
+Skill이나 MCP를 직접 실행하지 않습니다. `/public-web-inventory` 또는 `/cve-intel` 같은 실행
+명령은 사용하지 않습니다.
+
+이어서 두 실습 요청을 일반 프롬프트로 실행합니다. 공개 경로·API 조사에는
+`public-web-inventory`, 제품·버전 기반 CVE 조사에는 `known-vulnerability-triage`가 선택되는지
+확인합니다. CVE 조사에서는 `cve-intel` Tool Call과 Tool Result가 실제 실행 기록에 남아야 합니다.
+Skill을 직접 작성하거나 수정하는 과정은 수강생 실습에 포함하지 않습니다.

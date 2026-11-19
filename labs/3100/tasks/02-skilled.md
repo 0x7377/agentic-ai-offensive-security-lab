@@ -2,7 +2,9 @@
 
 대상과 모델은 1차 실습과 동일하게 유지한다.
 
-`.opencode/skills/public-web-inventory/`에 Skill을 설치한 후 새 OpenCode 세션에서 1차와 동일한 요청을 입력한다.
+저장소에 포함된 `public-web-inventory`와 `known-vulnerability-triage`를 `.opencode/skills/`에 함께 설치하고 CVE MCP까지 연결한 후 새 OpenCode 세션에서 1차와 동일한 요청을 입력한다. 이 요청에서는 `public-web-inventory`가 선택되는지 확인하며 Skill을 직접 작성하거나 내용을 수정하지 않는다.
+
+> http://127.0.0.1:3100과 같은 출처에서 공개된 서브 경로·엔드포인트·API와 사용자 입력·변조 가능한 파라미터를 찾아 표로 정리해 주세요. 로그인, 상태 변경, 공격, 무작위 경로 대입은 하지 말고 5분 또는 HTTP 요청 20회가 되면 현재 결과로 종료하세요.
 
 완료 후 결과의 우열이 아니라 작업 방식의 변화를 관찰한다.
 

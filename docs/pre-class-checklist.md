@@ -52,6 +52,10 @@
 - [ ] 호스트 브라우저에서 3100 접속
 - [ ] CVE MCP 컨테이너 healthy
 - [ ] OpenCode MCP 등록 또는 설정 확인
+- [ ] `skills/source/public-web-inventory/SKILL.md` 존재
+- [ ] `skills/packages/public-web-inventory.zip` 존재
+- [ ] `skills/source/known-vulnerability-triage/SKILL.md` 존재
+- [ ] `skills/packages/known-vulnerability-triage.zip` 존재
 - [ ] Skill 배포 ZIP 무결성 확인
 
 macOS에서는 다음 명령의 모든 항목이 `OK`인지 확인합니다.
