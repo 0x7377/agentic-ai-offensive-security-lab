@@ -21,6 +21,8 @@ for service in 3100 3101 3102 3103 3104 3105; do
   test -f "labs/$service/Dockerfile"
 done
 
+test -f labs/3100/AGENTS.md
+
 test -f skills/packages/SHA256SUMS.txt
 (
   cd skills/packages

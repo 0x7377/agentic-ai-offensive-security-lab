@@ -31,6 +31,9 @@
     { "action": "skill", "resource": "*", "effect": "allow" },
     { "action": "webfetch", "resource": "*", "effect": "allow" },
     { "action": "shell", "resource": "*", "effect": "ask" },
+    { "action": "read", "resource": "server.py", "effect": "deny" },
+    { "action": "read", "resource": "static/*", "effect": "deny" },
+    { "action": "read", "resource": "Dockerfile", "effect": "deny" },
     { "action": "edit", "resource": "*", "effect": "deny" }
   ]
 }
